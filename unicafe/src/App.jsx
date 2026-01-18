@@ -11,6 +11,16 @@ const Heading = ({text}) => {
 }
 
 const Statistics = ({good, neutral, bad, all, average, positive}) => {
+  
+  if(all == 0) {
+    return (
+      <>
+        <Heading text={"statistics"} />
+        <p>No feedback given</p>
+      </>
+    )
+  }
+  
   return (
     <>
       <Heading text={"statistics"} />

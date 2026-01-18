@@ -10,6 +10,20 @@ const Heading = ({text}) => {
   return <h1>{text}</h1>
 }
 
+const Statistics = ({good, neutral, bad, all, average, positive}) => {
+  return (
+    <>
+      <Heading text={"statistics"} />
+      <p>good {good}</p>
+      <p>neutral {neutral}</p>
+      <p>bad {bad}</p>
+      <p>all {all}</p>
+      <p>average {average}</p>
+      <p>posivtive {positive} %</p>
+    </>
+  )
+}
+
 function App() {
   //states
   const [good, setGood] = useState(0);
@@ -84,13 +98,14 @@ function App() {
       <Button onClick={handleNeutralClick} text={"neutral"} />
       <Button onClick={handleBadClick} text={"bad"} />
 
-      <Heading text={"statistics"} />
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {all}</p>
-      <p>average {average}</p>
-      <p>posivtive {positive} %</p>
+      <Statistics   
+          good={good} 
+          neutral={neutral}
+          bad={bad}
+          all={all}
+          average={average}
+          positive={positive}
+      />
     </>
   )
 }
